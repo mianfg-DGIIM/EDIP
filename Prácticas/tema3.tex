@@ -1,0 +1,397 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{boldline}
+\usepackage{amssymb, amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{amsthm}  % insertar teoremas, corolarios...
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\textbf{Relación de problemas Tema 3}}
+\rhead{EDIP 1º DGIIM 2017/2018 · \textbf{Grupo 1}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\definecolor{grey}{RGB}{200, 200, 200}
+
+% buscar entorno para proposiciones
+
+\graphicspath{ {images/} }
+
+% Meta
+\title{%
+  \textbf{Relación de problemas Tema 3} \\ Espacios de probabilidad \\
+  \hspace{1cm}\\
+  \large \emph{Estadística Descriptiva e Introducción a la Probabilidad} \\
+    1º DGIIM, 2017/2018}
+\author{\small{Alumnos (\textbf{Grupo 1}):} \\
+Miguel Ángel Fernández Gutiérrez \\
+Eladia Gómez Morales \\
+Marta Gómez Sánchez \\
+Daniel Gonzálvez Alfert}
+\date{\small{Fecha de entrega:} \\
+\today}
+
+% Custom
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\setlength\parindent{0pt}
+\definecolor{Light}{gray}{.90}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+%Theorem envairoment
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corolario}[theorem]
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+
+\begin{document}
+\maketitle
+
+\hrulefill
+
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 1				 #
+%				#							 #
+%				##############################
+
+
+\begin{itemize}
+	\item[\textbf{1.}] Durante un año, las personas de una ciudad utilizan 3 tipos de transportes: metro (M), autobús (A), y coche particular (C). Las probabilidades de que durante el año hayan usado unos u otros transportes son:
+\begin{table}[htb]
+\hspace{0.7cm}
+\begin{tabular}{c c c c c c c}
+	M: $0.3$; & A: $0.2$; & C: $0.15$; & M y A: $0.1$; & M y C: $0.05$; & A y C: $0.06$; & M, A y C: $0.01$	
+\end{tabular}
+\end{table}
+
+Calcular las probabilidades siguientes:
+
+	\begin{itemize}
+		\item[\emph{a)}] que una persona viaje en metro y no en autobús;
+		\item[\emph{b)}] que una persona tome al menos dos medios de transporte;
+		\item[\emph{c)}] que una persona viaje en metro o en coche, pero no en autobús;
+		\item[\emph{d)}] que viaje en metro, o bien en autobús y en coche;
+		\item[\emph{e)}] que una persona vata a pie.
+	\end{itemize}
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:} \\
+
+	\begin{itemize}
+		\item[\emph{a)}] P(``viajar en metro y no en autobús'')\\
+		\hspace*{0.5cm}= P(M $-$ A $-$ C) + P(M $\cap$ C) = 0.05 + 0.3 = 0.35
+		\item[\emph{b)}] P(``tomar al menos dos medios de transporte'')\\
+		\hspace*{0.5cm}= P(M $\cap$ A) + P(M $\cap$ C) + P(A $\cap$ C) + P(A $\cap$ M $\cap$ C)\\
+		\hspace*{0.5cm}= 0.1 + 0.05 + 0.06 + 0.01 = 
+		\item[\emph{c)}] P(``viajar en metro o en coche, pero no en avión'')\\
+		\hspace*{0.5cm} = P(M $-$ A $-$ C) + P(C $-$ A $-$ M) + P(M $\cap$ C) = 0.3 + 0.15 + 0.05 =
+		\item[\emph{d)}] P(``viajar en metro o viajar en autobús y en coche'')\\
+		\hspace*{0.5cm} = P(M $-$ A $-$ C) + P(A $\cap$ C) = 0.3 + 0.06 =
+		\item[\emph{e)}] No tiene mucho sentido, pues una persona puede tomar otro medio de transporte..
+	\end{itemize}
+
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 2				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{2.}] Sean $A, B$ y $C$ tres sucesos de un espacio probabilístico ($\Omega$,$A$,P), tales que $P(A)=0.4$, $P(B)=0.2$, $P(C)=0.3$, $P(A\cap B)=0.1$ y $P(A\cup B)\cap C=\emptyset$.Calcular las probabilidades de los siguientes sucesos:
+	
+
+	\begin{itemize}
+		\item[\emph{a)}] sólo ocurre $A$,
+		\item[\emph{b)}] ocurren los tres sucesos,
+		\item[\emph{c)}] ocurren $A$ y $B$ pero no $C$,
+		\item[\emph{d)}] por lo menos dos ocurren,
+		\item[\emph{e)}] ocurren dos y no más,
+		\item[\emph{f)}] no ocurren más de dos,
+		\item[\emph{g)}] ocurre por lo menos uno,
+		\item[\emph{h)}] ocurre sólo uno,
+		\item[\emph{i)}] no ocurre ninguno.
+	\end{itemize}
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}
+
+
+	\begin{itemize}
+		\item[\emph{a)}] P(``sólo ocurre A'') = P(A $-$ B) = 0.3
+		\item[\emph{b)}] P(``ocurre los tres sucesos'') = P(A $\cap$ B $\cap$ C) = 0
+		\item[\emph{c)}] P(``ocurren A y B pero no C'') = P(A $\cap$ B $\cap$ $\neg$C) = 0.5
+		\item[\emph{d)}] P(``ocurren A y B pero no C'') = P(A $\cap$ B) = 0.1
+		\item[\emph{e)}] P(``ocurren dos y no más'') = P(A $\cap$ B) = 0.1
+		\item[\emph{f)}] Como en ningún caso ocurren los tres, P(``no ocurren más de dos'') = 1
+		\item[\emph{g)}] P(``por lo menos uno'') = P(A $\cap$ B) + P(C) = 0.5 + 0.3 = 0.8
+		\item[\emph{h)}] P(``ocurre sólo uno'') = P(A $-$ B) + P(B $-$ A) + P(C) = 0.3 + 0.1 + 0.3 = 0.7
+		\item[\emph{i)}] P(``no ocurre ninguno'') = 1 $-$ P(``por lo menos uno'') = 1 $-$ 0.8 = 0.2
+	\end{itemize}
+
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 3				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{3.}] Se sacan dos bolas sucesivamente sin devolución de una urna que contiene tres bolas rojas distinguibles y 2 blancas distinguibles:
+
+\begin{itemize}
+	\item[\emph{a)}] Describir el espacio de probabilidad asociado a este experimento.
+	\item[\emph{b)}] Descomponer en sucesos elementales los sucesos: \emph{la primera bola es roja}, \emph{la segunda bola es blanca} y calcular la probabilidad de cada uno de ellos.
+	\item[\emph{c)}] ¿Cuál es la probabilidad de que ocurra alguno de los sucesos considerados en el apartado anterior?
+\end{itemize}
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}
+
+
+\begin{itemize}
+	\item[\emph{a)}] El suceso de probabilidad asociado a este experimento es:
+	\item[] $\Omega$ = $\{R_1R_2, R_1R_3, R_1B_1, R_1B_2, R_2R_1, R_2R_3, R_2B_1, R_2B_2, R_3R_1, R_3R_2, R_3B_1, R_3B_2,$\\
+	\hspace*{1cm}$B_1R_1, B_1R_2, B_1R_3, B_1B_2, B_2R_1, B_2R_2, B_2R_3, B_2B_1\}$
+	\item[\emph{b)}] Los sucesos serían:
+	\item[] A = ``la primera bola es roja''\\
+	\hspace*{0.425cm}= $\{R_1R_2, R_1R_3, R_1B_1, R_1B_2, R_2R_1, R_2R_3, R_2B_1, R_2B_2, R_3R_1, R_3R_2, R_3B_1, R_3B_2\}$
+	\item[] B = ``la segunda bola es blanca'' = $\{R_1B_1, R_1B_2, R_2B_1, R_2B_2, R_3B_1, R_3B_2, B_1B_2, B_2B_1\}$
+	\item[\emph{c)}] P(A) = 12/20 = 0.6, P(B) = 8/20 = 0.4
+\end{itemize}
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 4				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{4.}] Una urna contiene \emph{a} bolas blancas y \emph{b} bolas negras. ¿Cuál es la probabilidad de que al extraer dos bolas simultáneamente sean de distinto color?
+\end{itemize}
+
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}\\
+
+Nos encontramos ante una combinación sin repetición. Si llamamos al suceso:\\
+
+\hspace{1cm}A = ``extraer dos bolas de distinto color''\\
+
+Tenemos entonces que:
+
+$$\text{P(A)} = \frac{\left(\begin{matrix}a \\ 1\end{matrix}\right) \left(\begin{matrix}b \\ 1\end{matrix}\right)}{\left(\begin{matrix}a+b \\ 2\end{matrix}\right)}=\frac{a!}{1! (a-1)!}\frac{b!}{1!(b-1)!}\frac{2!(a+b-1)!}{(a+b)!}=\frac{2ab}{(a+b)(a+b-1)}$$
+
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 5				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{5.}] Una urna contiene 5 bolas blancas y 3 rojas. Se extraen 2 bolas simultáneamente. Calcular la probabilidad de obtener:
+
+
+	\begin{itemize}
+		\item[\emph{a)}] dos bolas rojas,
+		\item[\emph{b)}] dos bolas blancas,
+		\item[\emph{c)}] una blanca y otra roja.
+	\end{itemize}
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}\\
+
+De nuevo estamos ante una combinación sin repetición. Denominaremos a los sucesos de la siguiente forma:\\
+
+\hspace{1cm}A = ``obtener dos bolas rojas''\\
+\hspace*{1cm}B = ``obtener dos bolas blancas'')\\
+\hspace*{1cm}C = ``obtener una bola blanca y otra roja'')\\
+
+Calcularemos a continuación las probabilidades:
+
+$$\text{P(A)} = \frac{\left(\begin{matrix}3 \\ 2\end{matrix}\right)}{\left(\begin{matrix}8 \\ 2\end{matrix}\right)}=$$
+
+$$\text{P(B)} = \frac{\left(\begin{matrix}5 \\ 2\end{matrix}\right)}{\left(\begin{matrix}8 \\ 2\end{matrix}\right)}=$$
+
+$$\text{P(C)} = \frac{\left(\begin{matrix}5 \\ 1\end{matrix}\right) \left(\begin{matrix}3 \\ 1\end{matrix}\right)}{\left(\begin{matrix}8 \\ 2\end{matrix}\right)}=$$
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 6				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{6.}] En una lotería de 100 billetes hay 2 que tienen premio. 
+	\begin{itemize}
+		\item[\emph{a)}] ¿Cuál es la probabilidad de ganar al menos un premio si se compran 12 billetes?
+		\item[\emph{b)}] ¿Cuántos billetes habrá que comprar para que la probabilidad de ganar al menos un premio sea mayor que $4/5$?
+	\end{itemize}
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}
+
+	\begin{itemize}
+		\item[\emph{a)}] Nombrando el suceso:
+		\item[] \hspace*{1cm}A = ``ganar al menos un premio comprando 12 billetes''\\
+		\hspace*{1cm}$\bar{\text{A}}$ = ``ganar ningún premio comprando billetes''
+		\item[] Podemos calcularla de la siguiente forma:
+		\item[] \hspace*{1cm}P(A) = 1 $-$ P($\bar{\text{A}}$)
+		\item[] De este modo tenemos que:
+		$$\text{P}(\bar{\text{A}}) = \frac{\left(\begin{matrix}98 \\ 12\end{matrix}\right)}{\left(\begin{matrix}100 \\ 12\end{matrix}\right)} \rightarrow \text{P(A)} = 1 - \frac{\left(\begin{matrix}98 \\ 12\end{matrix}\right)}{\left(\begin{matrix}100 \\ 12\end{matrix}\right)} = $$
+		\item[\emph{b)}] De forma análoga al apartado anterior, llamaremos:
+		\item[] \hspace*{1cm}B = ``ganar al menos un premio comprando $n$ billetes''\\
+		\hspace*{1cm}$\bar{\text{B}}$ = ``ganar ningún premio comprando $n$ billetes''
+		\item[] De este modo tenemos que, exigiendo que P(B) $>$ 4/5:
+		$$\text{P(B)} = 1 - \frac{\left(\begin{matrix}98 \\ n\end{matrix}\right)}{\left(\begin{matrix}100 \\ n\end{matrix}\right)} > \frac{4}{5} \iff 1 - \frac{(99-n)(100-n)}{100 \cdot 99} < \frac{4}{5} \iff n = --- $$
+	\end{itemize}
+
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 7				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{7.}] Se consideran los 100 primeros números naturales. Se sacan 3 al azar.
+	\begin{itemize}
+		\item[\emph{a)}] Calcular la probabilidad de que en los 3 números obtenidos no exista ningún cuadrado perfecto.
+		\item[\emph{b)}] Calcular la probabilidad de que exista al menos un cuadrado perfecto.
+		\item[\emph{c)}] Calcular la probabilidad de que exista un sólo cuadrado perfecto, de que existan dos, y la de que los tres lo sean.
+	\end{itemize}
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}\\
+
+Para resolver este ejercicio, constataremos el suceso genérico:\\
+
+\hspace*{1cm}$S^a_b$ = ``escoger $a$ números al azar de entre los 100 primeros números naturales\\
+\hspace*{2.1cm}y que $b$ de ellos sean cuadrados perfectos''\\
+
+Teniendo en cuenta que estamos ante una combinación sin repetición, podemos decir que:
+
+$$ \text{P}(S^a_b) = \frac{\left(\begin{matrix}90 \\ a-b\end{matrix}\right) \left(\begin{matrix}10 \\ b\end{matrix}\right)}{\left(\begin{matrix}100 \\ a\end{matrix}\right)} $$
+
+Ahora podemos resolver todos los apartados del ejercicio:
+
+	\begin{itemize}
+		\item[\emph{a)}] P(``ningún cuadrado perfecto obteniendo 3 al azar'') = P($S^3_0$) = 
+		\item[\emph{b)}] P(``al menos un cuadrado perfecto obteniendo 3 al azar'') = 1 - P($S^3_0$) = 
+		\item[\emph{c)}] P(``obtener 1 cuadrado perfecto obteniendo 3 al azar'') = P($S^3_1$) = \\
+		P(``obtener 2 cuadrados perfectos obteniendo 3 al azar'') = P($S^3_2$) = \\
+		P(``obtener 3 cuadrados perfectos obteniendo 3 al azar'') = P($S^3_3$) = 
+	\end{itemize}
+%				##############################
+%				#							 #
+%				#  PROBLEMA 8				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{8.}] En una carrera de relevos cada equipo se compone de 4 atletas. La sociedad deportiva de un colegio cuenta con 10 corredores y su entrenador debe formar un equipo de relevos que disputará el campeonato, y el orden en que participarán los seleccionados.
+	
+	\begin{itemize}
+		\item[\emph{a)}] ¿Entre cuántos equipos distintos habrá de elegir el entrenador si los 10 corredores son de igual valía? (Dos equipos con los mismos atletas en orden distinto se consideran diferentes)
+		\item[\emph{b)}] Calcular la probabilidad de que un alumno cualquiera sea seleccionado.
+	\end{itemize}
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}
+
+\begin{itemize}
+\item[\emph{a)}] Basta notar que se trata de una variación sin repetición:
+$$ V^4_{10} = \frac{10!}{(10-4)!} = $$
+		\item[\emph{b)}] Del mismo modo:
+		$$ \text{P(``un alumno sea seleccionado'')} = \frac{4V^3_9}{V^4_{10}} = \frac{4 \cdot 9!}{(9-3)!} \cdot \frac{(10-4)!}{10!} = $$
+		Nótese cómo hemos multiplicado por cuatro, pues si no lo hiciésemos estaríamos buscando el número de arreglos que podemos hacer fijando un alumno en una posición (importa el orden), pudiendo un alumno estar en cuatro posiciones diferentes.
+	\end{itemize}
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 9				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{9.}] Una tienda compra bombillas en lotes de 300 unidades. Cuando un lote llega, se comprueban 60 unidades elegidas al azar, rechazándose el envío si se supera la cifra de 5 defectuosas. ¿Cuál es la probabilidad de aceptar un lote en el que haya 10 defectuosas?
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}
+
+ 
+
+%				##############################
+%				#							 #
+%				#  PROBLEMA 10				 #
+%				#							 #
+%				##############################
+
+
+\pagebreak
+
+\begin{itemize}
+	\item[\textbf{10.}] Una secretaria debe echar al correo 3 cartas; para ello, introduce cada carta en un sobre y escribe las direcciones al azar. ¿Cuál es la probabilidad de que al menos una carta llegue a su destino?
+
+\end{itemize}
+
+{\color{grey}\hrulefill}
+
+\emph{Solución:}
+
+\end{document}
