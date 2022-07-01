@@ -1,6 +1,6 @@
-[⬅ Más asignaturas del DGIIM](https://github.com/mianfg/DGIIM)
+[⬅ Más asignaturas del DGIIM](https://github.com/mianfg-DGIIM)
 
-![Repo image](https://repository-images.githubusercontent.com/292305465/dd00f380-ed38-11ea-82ef-e9e5d1f93488)
+![Repo image](https://repository-images.githubusercontent.com/292305465/5dbb26e7-283d-4b5e-a7b0-b9dde512220c)
 
 # `EDIP` Estadística Descriptiva e Introducción a la Probabilidad
 
